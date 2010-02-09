@@ -1,0 +1,1 @@
+This project contains mochiweb_otp and mochiweb itself. Mochiweb is essentially untouched with the exception of an added .app file to bring it into OTP compliance. 
