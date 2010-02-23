@@ -1,4 +1,21 @@
-@author Martin J. Logan <martinjlogan@erlware.org>
-@copyright 2010 Martin J. Logan
-@version {@vsn}
+@author Martin J. Logan and members of CEUG
+
+@doc 
+
+<h1>Mochiweb OTP Application</h1>
+
+<p>Provides a thin wrapper around the mochiweb application. This wrapper allows users to configure instances of the webserver via the normal OTP configuration mechanisms provided by the -config argument to the emulator. The configuration options are as follows</p>
+
+For example:
+<pre>
+{mochiweb_otp, [
+   {instances, [
+                [{port, 8080}, {ip, "127.0.0.1"}, {loop, {mwa_index, handle}}]
+                [{port, 1055}, {ip, "127.0.0.1"}, {loop, {mwo_request, req_handle}}]
+               ]}
+  ]
+ }
+</pre>
+
+<p>The above configuration tells mochiweb to start two instances of the server the first listening on port 8080 the second on port 1055. They both listen on the localhost. The first uses mwa_index:handle/1 to handle requests while the second uses the function mwo_request:req_handle/1 to handle requests.</p>
 

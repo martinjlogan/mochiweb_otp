@@ -33,8 +33,8 @@ start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 %%--------------------------------------------------------------------
-%% @doc Start up a new child process
-%% @spec start_child(Options) -> ok.
+%% @doc Start up a new child process.
+%% @spec start_child(Options) -> ok
 %% @end
 %%--------------------------------------------------------------------
 start_child(Options) ->
